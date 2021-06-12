@@ -3,7 +3,12 @@ version: "3.8"
 services:
   pihole:
     container_name: pihole
-    image: pihole/pihole:v5.1.2
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "5000:80/tcp"
     restart: always
 
     environment:
